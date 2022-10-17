@@ -1,4 +1,4 @@
-# Fast HEVC integer transform 
+# Fast HEVC integer transform ![](_files/logo_small.png) 
 
 The largest transform size in HEVC is 32&times;32. The Standard defines the row-column method and one integer matrix to compute the residual block transform during decoding. With the naïve matrix-vector multiplication the 32-point 1-D IDCT transform would require 32&times;32 = 1024 multiplications. 
 
@@ -101,6 +101,3 @@ Then performing the inverse integer transform, we obtain the residuals added to 
 	  18   20   16   10   10   17   18   10    3    4    7    6    5    7   12   15  11    4   -1    3   13   20   18   15   18   22   20   14   14   19   21   18
 
 The result was tested against another HEVC analyzer (Intel) and so far it is promising. 
-
-["_HEVC/logo_small.png" width=150] 
-
