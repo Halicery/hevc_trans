@@ -6,11 +6,15 @@ Based on the well-known recursive factorization of the DCT matrix from the liter
 
 I was further interested in computing these odd sub-matrix products with even less multiplications and derived an algoritm using transform of the odd DCT parts to signed-circular form and compute the products in a recursive way. The result is 3+9+27+81 = 120 integer multiplications for the 32-point 1-D transform of HEVC (88% reduction, figure right). 
 
-![](_files/nmul_recursive.png) &nbsp; ![](_files/nmul_algo.png) 
+<img src="_files/nmul_recursive.png" width="40%"></img> &nbsp; <img src="_files/nmul_algo.png" width="40%"></img>
 
 The method is based on C = P D P<sup>-1</sup>, where P is a signed-permutation matrix. 
 
-There is also a draft paper I have written about it in this repo and based on the results C-code for all transform sizes. 
+There is also a <a href="Fast algorithm for the 1-D integer transform of HEVC with circulants.pdf">draft paper</a> I have written about it in this repo and based on the results C-code for all transform sizes. 
+
+<a href="Fast algorithm for the 1-D integer transform of HEVC with circulants.pdf">
+<img src="_files/cover.png"></img></a>
+
 
 Here is an example during decoding the test stream **ipcm_A_NEC_3.bit** by my little HEVC decoder, the first transform is a 32&times;32 transform block. After decoding the residuals (coefficients) the result is the following (zeroes not shown): 
 
